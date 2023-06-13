@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 :root {
   --primary-color: #A259FF;
@@ -21,10 +22,15 @@
 
 html,button,input,textarea {
   font-size: 24px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  line-height: 2rem;
+    font-family: 'Barlow', sans-serif;
   letter-spacing: 0.015rem;
   color: white;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 section, footer, nav {
@@ -32,7 +38,6 @@ section, footer, nav {
 }
 
 body {
-  padding-block: 50px;
   background-color: var(--black-1);
 }
 
@@ -40,6 +45,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 2rem; left: 0; right: 0;
 }
 
 .navigation-list {
@@ -55,7 +62,24 @@ nav {
   background-color: var(--primary-color);
 }
 
-#welcome-sec {
+#welcome_section {
   min-height: 100vh;
-  background-image: url(./assets/welcome-background.png);
+  background: url(../public/assets/welcome-background.png) no-repeat,
+              radial-gradient(10rem at 45% 95%, #a159ff7e, var(--black-1));
+  background-size: auto 100vh;
+
+  padding-inline: 160px;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+
+.gapped_container > * {
+  margin-top: 1rem;
+}
+
+.statistic_list {
+  display: flex;
+  gap: 1rem;
 }
