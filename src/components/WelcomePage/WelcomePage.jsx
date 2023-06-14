@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import StatisticList from "./StatisticList"
 import Card from "./Card"
 import SectionHeader from "../SectionHeader"
@@ -6,6 +6,16 @@ import CreatorCard from "./CreatorCard"
 import data from "../../creator_data.json"
 
 export default function WelcomePage() {
+    // useEffect(() => {
+    //     let inter = setInterval(() => {
+    //         $(".animation_div .card").each((index,card) => {
+    //             $(card).css("top", parseInt($(card).css("top")) - 1 + "px")
+    //         });
+    //     })
+    //     return () => {
+    //         clearInterval(inter);
+    //     }
+    // }, [])
     return <main>
         <section id="welcome_section">
         <img src="./assets/welcome-1.png" alt="" />
@@ -40,7 +50,14 @@ export default function WelcomePage() {
                     <StatisticList />
                     <button className="btn btn-transparent">Create</button>
                 </div>
-                <img src="./assets/stat-back.png" alt="stack photos" />
+                <div className="animation_div">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
         </section>
         </main> 
 }

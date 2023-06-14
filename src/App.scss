@@ -256,7 +256,31 @@ nav {
         -webkit-background-clip: text;
         filter: brightness(2)
     }
-    .img_back {
-        object-fit: cover;
+    .animation_div {
+        position: relative;
+        width: 40vw;
+        overflow: hidden;
+        .card {
+            position: absolute;
+            &:nth-of-type(odd) {
+                right: 3rem;
+            }
+            @for $i from 0 to 6 {
+                animation: animatingCards 10s infinite forwards linear;
+                &:nth-of-type(#{$i}) {
+                    top: $i * 12rem;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes animatingCards {
+    0% {
+        top: 0
+    }
+    100% {
+        top: 100%
     }
 }
