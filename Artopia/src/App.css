@@ -231,4 +231,28 @@ nav {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#statistics_section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  background-image: radial-gradient(20rem at 5% 95%, rgba(161, 89, 255, 0.3647058824), transparent);
+}
+#statistics_section .info_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  color: transparent;
+  background: linear-gradient(45deg, var(--gradient));
+  font-weight: bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  filter: brightness(2);
+}
+#statistics_section .img_back {
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=App.css.map */

@@ -237,3 +237,26 @@ nav {
         object-fit: cover;
     }
 }
+
+#statistics_section {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    background-image: radial-gradient(20rem at 5% 95%, #a159ff5d, transparent);
+    .info_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        color: transparent;
+        background: linear-gradient(45deg, var(--gradient));
+        font-weight: bold;
+        background-clip: text;
+        -webkit-background-clip: text;
+        filter: brightness(2)
+    }
+    .img_back {
+        object-fit: cover;
+    }
+}

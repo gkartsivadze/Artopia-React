@@ -34,15 +34,13 @@ export default function WelcomePage() {
             </div>
         </section>
         <section id="statistics_section">
-                <div>
-                <h1>We Have The Best Digital Artists</h1>
-                <p>The world's Largest Digital Marketplace for digital art and 3d assets</p>
-                <StatisticList />
-                <button className="btn btn-transparent">Create</button>
+                <div className="info_div">
+                    <h1>We Have The Best Digital Artists</h1>
+                    <p>The world's Largest Digital Marketplace for digital art and 3d assets</p>
+                    <StatisticList />
+                    <button className="btn btn-transparent">Create</button>
                 </div>
-                <div>
-
-                </div>
+                <img src="./assets/stat-back.png" alt="stack photos" />
         </section>
         </main> 
 }
