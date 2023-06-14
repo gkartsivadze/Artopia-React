@@ -44,5 +44,47 @@
         "images": "./assets/avatar-7.png",
         "sales": "34.5K USD"
       }
+    ],
+    "categories" : [
+      {
+        "id": 1,
+        "name": "Digital Art",
+        "image": "./assets/category.png"
+      },
+      {
+        "id": 2,
+        "name": "Game Assets",
+        "image": "./assets/category-1.png"
+      },
+      {
+        "id": 3,
+        "name": "Audio",
+        "image": "./assets/category-2.png"
+      },
+      {
+        "id": 4,
+        "name": "Photography",
+        "image": "./assets/category-3.png"
+      },
+      {
+        "id": 5,
+        "name": "Animation",
+        "image": "./assets/category-4.png"
+      },
+      {
+        "id": 6,
+        "name": "Modeling",
+        "image": "./assets/category-5.png"
+      },
+      {
+        "id": 7,
+        "name": "Game Art",
+        "image": "./assets/category-6.png"
+      },
+      {
+        "id": 8,
+        "name": "Illustration",
+        "image": "./assets/category-7.png"
+      }
     ]
   }

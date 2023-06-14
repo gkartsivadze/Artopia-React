@@ -94,6 +94,10 @@ nav {
     opacity: 0.7;
 }
 
+.bg-black {
+    background-color: var(--black-2);
+}
+
 .section_header {
     display: grid;
     margin-block: 2rem;
@@ -156,7 +160,7 @@ nav {
     &:hover {
         background-size: calc(100% + 4rem);
     }
-    .grid-container {
+    .grid_container {
         display: grid;
         backdrop-filter: blur(1rem);
         grid-template-columns: repeat(3, max-content);
@@ -242,6 +246,7 @@ nav {
     margin-top: 3rem;
     display: flex;
     justify-content: space-evenly;
+    gap: 2rem;
     min-height: 100vh;
     background-image: radial-gradient(20rem at 5% 95%, #a159ff5d, transparent);
     .info_div {
@@ -258,7 +263,7 @@ nav {
     }
     .animation_div {
         position: relative;
-        width: 40vw;
+        width: 30rem;
         overflow: hidden;
         .card {
             position: absolute;

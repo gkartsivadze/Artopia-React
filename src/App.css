@@ -95,6 +95,10 @@ nav {
   opacity: 0.7;
 }
 
+.bg-black {
+  background-color: var(--black-2);
+}
+
 .section_header {
   display: grid;
   margin-block: 2rem;
@@ -156,7 +160,7 @@ nav {
 .card:hover {
   background-size: calc(100% + 4rem);
 }
-.card .grid-container {
+.card .grid_container {
   display: grid;
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
@@ -167,22 +171,22 @@ nav {
   padding-top: 0;
   font-size: 0.5rem;
 }
-.card .grid-container h3 {
+.card .grid_container h3 {
   grid-column: 1/4;
   grid-row: 1/2;
   padding-block: 1rem;
 }
-.card .grid-container img {
+.card .grid_container img {
   grid-row: 2/4;
 }
-.card .grid-container .card-text {
+.card .grid_container .card-text {
   grid-row: 2/3;
 }
-.card .grid-container .card-text:nth-of-type(1) {
+.card .grid_container .card-text:nth-of-type(1) {
   margin-right: 4rem;
 }
-.card .grid-container .card-name,
-.card .grid-container .card-price {
+.card .grid_container .card-name,
+.card .grid_container .card-price {
   grid-row: 3/4;
 }
 
@@ -237,6 +241,7 @@ nav {
   margin-top: 3rem;
   display: flex;
   justify-content: space-evenly;
+  gap: 2rem;
   min-height: 100vh;
   background-image: radial-gradient(20rem at 5% 95%, rgba(161, 89, 255, 0.3647058824), transparent);
 }
@@ -254,7 +259,7 @@ nav {
 }
 #statistics_section .animation_div {
   position: relative;
-  width: 40vw;
+  width: 30rem;
   overflow: hidden;
 }
 #statistics_section .animation_div .card {

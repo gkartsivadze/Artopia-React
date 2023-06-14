@@ -4,7 +4,7 @@ export default function Card() {
     return (
         <div className="card">
             <div>
-                <div className="grid-container">
+                <div className="grid_container">
                     <h3>Da Viper</h3>
                     <img src="./assets/card-icon.png" alt="Card" />
                     <p className="card-text grey-text">Creator</p>

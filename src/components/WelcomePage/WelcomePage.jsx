@@ -1,9 +1,10 @@
-import React, {useEffect} from "react"
-import StatisticList from "./StatisticList"
-import Card from "./Card"
-import SectionHeader from "../SectionHeader"
-import CreatorCard from "./CreatorCard"
-import data from "../../creator_data.json"
+import React, {useEffect} from "react";
+import StatisticList from "./StatisticList";
+import Card from "./Card";
+import SectionHeader from "../SectionHeader";
+import CreatorCard from "./CreatorCard";
+import Category from "./Category";
+import data from "../../creator_data.json";
 
 export default function WelcomePage() {
     $(".animation_div .card").each((index,card) => {
@@ -15,11 +16,6 @@ export default function WelcomePage() {
                 }
             }, 40)
         });
-    useEffect(() => {
-        return () => {
-            // clearInterval(inter);
-        }
-    }, [])
     return <main>
         <section id="welcome_section">
         <img src="./assets/welcome-1.png" alt="" />
@@ -62,6 +58,14 @@ export default function WelcomePage() {
                     <Card />
                     <Card />
                 </div>
+        </section>
+        <section id="categories_section">
+            <SectionHeader hero="Categories" />
+            <div className="grid_container">
+                {data.categories.map(elem => {
+                    return <Category key={elem.id} categoryImage={elem.image} categoryText={elem.name} />
+                })}
+            </div>
         </section>
         </main> 
 }
