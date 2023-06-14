@@ -1,6 +1,6 @@
 import React from "react"
 import StatisticList from "./StatisticList"
-import Card from "./card"
+import Card from "./Card"
 import SectionHeader from "../SectionHeader"
 import CreatorCard from "./CreatorCard"
 import data from "../../creator_data.json"
