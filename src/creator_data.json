@@ -49,42 +49,50 @@
       {
         "id": 1,
         "name": "Digital Art",
-        "image": "./assets/category.png"
+        "image": "./assets/category.png",
+        "cover": "./assets/category-logo.png"
       },
       {
         "id": 2,
         "name": "Game Assets",
-        "image": "./assets/category-1.png"
+        "image": "./assets/category-1.png",
+        "cover": "./assets/category-logo-1.png"
       },
       {
         "id": 3,
         "name": "Audio",
-        "image": "./assets/category-2.png"
+        "image": "./assets/category-2.png",
+        "cover": "./assets/category-logo-2.png"
       },
       {
         "id": 4,
         "name": "Photography",
-        "image": "./assets/category-3.png"
+        "image": "./assets/category-3.png",
+        "cover": "./assets/category-logo-3.png"
       },
       {
         "id": 5,
         "name": "Animation",
-        "image": "./assets/category-4.png"
+        "image": "./assets/category-4.png",
+        "cover": "./assets/category-logo-4.png"
       },
       {
         "id": 6,
         "name": "Modeling",
-        "image": "./assets/category-5.png"
+        "image": "./assets/category-5.png",
+        "cover": "./assets/category-logo-5.png"
       },
       {
         "id": 7,
         "name": "Game Art",
-        "image": "./assets/category-6.png"
+        "image": "./assets/category-6.png",
+        "cover": "./assets/category-logo-6.png"
       },
       {
         "id": 8,
         "name": "Illustration",
-        "image": "./assets/category-7.png"
+        "image": "./assets/category-7.png",
+        "cover": "./assets/category-logo-7.png"
       }
     ]
   }

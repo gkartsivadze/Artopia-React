@@ -63,7 +63,7 @@ export default function WelcomePage() {
             <SectionHeader hero="Categories" />
             <div className="grid_container">
                 {data.categories.map(elem => {
-                    return <Category key={elem.id} categoryImage={elem.image} categoryText={elem.name} />
+                    return <Category key={elem.id} categoryImage={elem.image} categoryText={elem.name} categoryCover={elem.cover} />
                 })}
             </div>
         </section>
