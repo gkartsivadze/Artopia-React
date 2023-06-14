@@ -6,16 +6,20 @@ import CreatorCard from "./CreatorCard"
 import data from "../../creator_data.json"
 
 export default function WelcomePage() {
-    // useEffect(() => {
-    //     let inter = setInterval(() => {
-    //         $(".animation_div .card").each((index,card) => {
-    //             $(card).css("top", parseInt($(card).css("top")) - 1 + "px")
-    //         });
-    //     })
-    //     return () => {
-    //         clearInterval(inter);
-    //     }
-    // }, [])
+    $(".animation_div .card").each((index,card) => {
+        $(card).css("top", index * 12 + "rem");
+            let inter = setInterval(() => {
+                $(card).css("top", parseInt($(card).css("top")) + 1 + "px")
+                if(parseInt($(card).css("top")) > $("#statistics_section").height() + $(".card").outerHeight()) {
+                    $(card).css("top", 0 - $(".card").outerHeight() + "px");
+                }
+            }, 40)
+        });
+    useEffect(() => {
+        return () => {
+            // clearInterval(inter);
+        }
+    }, [])
     return <main>
         <section id="welcome_section">
         <img src="./assets/welcome-1.png" alt="" />
