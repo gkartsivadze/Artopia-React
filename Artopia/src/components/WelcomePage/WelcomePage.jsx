@@ -1,8 +1,9 @@
 import React from "react"
-import Statistic from "./statistic"
+import StatisticList from "./StatisticList"
 import Card from "./card"
 import SectionHeader from "../SectionHeader"
 import CreatorCard from "./CreatorCard"
+import data from "../../creator_data.json"
 
 export default function WelcomePage() {
     return <main>
@@ -13,11 +14,7 @@ export default function WelcomePage() {
             <h1 style={{fontSize: "3rem"}}>Buy and Sell<br />Digital Arts</h1>
             <p>The world’s largest online marketplace of online digital art </p>
             <h3><a href="#">Explore</a></h3>
-            <div className="statistic_list">
-                <Statistic num={"999,000"} category={"Digital art file"} />
-                <Statistic num={"2,000"} category={"Art Seller"} />
-                <Statistic num={"1,0000"} category={"Buyer"} />
-            </div>
+            <StatisticList />
         </div>
         </section>
         <section id="trending_section">
@@ -30,15 +27,22 @@ export default function WelcomePage() {
         </section>
         <section id="creators_section">
             <SectionHeader hero="Top Creators" subHero="Checkout Top Rated Creators On The NFT Marketplace" button="View Rankings" />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
-            <CreatorCard />
+            <div className="grid_container">
+                {data.profiles.map(elem => {
+                    return <CreatorCard key={elem.id} count={elem.id} creatorImg={elem.images} creatorName={elem.name} creatorSales={elem.sales} />
+                })}
+            </div>
+        </section>
+        <section id="statistics_section">
+                <div>
+                <h1>We Have The Best Digital Artists</h1>
+                <p>The world's Largest Digital Marketplace for digital art and 3d assets</p>
+                <StatisticList />
+                <button className="btn btn-transparent">Create</button>
+                </div>
+                <div>
+
+                </div>
         </section>
         </main> 
 }
