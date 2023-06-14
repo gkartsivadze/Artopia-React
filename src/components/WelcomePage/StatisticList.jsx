@@ -1,5 +1,5 @@
 import React from "react";
-import Statistic from "./statistic"
+import Statistic from "./Statistic"
 
 export default function StatisticList() {
         return (<div className="statistic_list">
