@@ -1,8 +1,12 @@
 import React from "react"
 import Statistic from "./statistic"
+import Card from "./card"
+import SectionHeader from "../SectionHeader"
+import CreatorCard from "./CreatorCard"
 
 export default function WelcomePage() {
-    return <section id="welcome_section">
+    return <main>
+        <section id="welcome_section">
         <img src="./assets/welcome-1.png" alt="" />
         <img src="./assets/welcome-2.png" alt="" />
         <div className="gapped_container">
@@ -16,4 +20,25 @@ export default function WelcomePage() {
             </div>
         </div>
         </section>
+        <section id="trending_section">
+            <SectionHeader hero="Trending Sales" subHero="Checkout our weekly updated trending sales" />
+            <div className="card_list">
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </section>
+        <section id="creators_section">
+            <SectionHeader hero="Top Creators" subHero="Checkout Top Rated Creators On The NFT Marketplace" button="View Rankings" />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+            <CreatorCard />
+        </section>
+        </main> 
 }
