@@ -5,6 +5,7 @@ import SectionHeader from "../SectionHeader";
 import CreatorCard from "./CreatorCard";
 import Category from "./Category";
 import data from "../../creator_data.json";
+import Carousel from "./Carousel";
 
 export default function WelcomePage() {
     $(".animation_div .card").each((index,card) => {
@@ -69,33 +70,7 @@ export default function WelcomePage() {
         </section>
         <section id="digital_section">
             <h1>Digital Art trending in All Categories</h1>
-            <div id="digital_carousel">
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-                <div className="container">
-                    <Card />
-                </div>
-            </div>
-            <div id="carousel_navigator">
-                <button className="btn btn-transparent">Previous</button>
-                <button className="btn btn-transparent">Next</button>
-            </div>
+            <Carousel passData={data.slider} />
         </section>
         </main> 
 }

@@ -94,5 +94,35 @@
         "image": "./assets/category-7.png",
         "cover": "./assets/category-logo-7.png"
       }
+    ],
+    "slider" : [
+      {
+        "id": 1,
+        "image": "./assets/slider.png"
+      },
+      {
+        "id": 2,
+        "image": "./assets/slider-1.png"
+      },
+      {
+        "id": 3,
+        "image": "./assets/slider-2.png"
+      },
+      {
+        "id": 4,
+        "image": "./assets/slider-3.png"
+      },
+      {
+        "id": 5,
+        "image": "./assets/slider-4.png"
+      },
+      {
+        "id": 6,
+        "image": "./assets/slider-5.png"
+      },
+      {
+        "id": 7,
+        "image": "./assets/slider-6.png"
+      }
     ]
   }
