@@ -13,10 +13,12 @@ export default function WelcomePage() {
         let height = $(".card").height();
         let road = $(".animation_div").outerHeight() + height;
         let numOfCards = road / height;
-        (road / height) % 2 == 0 ? numOfCards -= 1 : '';
+        console.log(numOfCards);
+        (road / height) % 2 == 0 ? '' :  numOfCards -= 1;
+        console.log(numOfCards);
         let spaceBetween = (numOfCards % 1) * height / Math.round(numOfCards);
         let timerInterval = 15;
-        for(let i = 1; i < Math.round(numOfCards);i++) {
+        for(let i = 1; i < Math.floor(numOfCards) + 1;i++) {
             setCards(prev => ([
                 ...prev,
                 i
@@ -32,11 +34,11 @@ export default function WelcomePage() {
                   const newTop = currentTop + 1;
                   $card.css("top", `${newTop}px`);
           
-                  if (newTop > road) {
+                  if (newTop >= road) {
                     $card.css("top", `${-height}px`)
                   }
                 }, timerInterval);
-              }, ind * spaceBetween * timerInterval * 2 );
+              }, ind * timerInterval * height);
             });
           }
         setTimeout(startAnimation, 300);
