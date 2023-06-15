@@ -11,13 +11,11 @@ export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
         let height = $(".card").height();
-        let road = $(".animation_div").outerHeight() + height;
+        let road = $(".animation_div").innerHeight() + height;
         let numOfCards = road / height;
-        console.log(numOfCards);
         (road / height) % 2 == 0 ? '' :  numOfCards -= 1;
-        console.log(numOfCards);
         let spaceBetween = (numOfCards % 1) * height / Math.round(numOfCards);
-        let timerInterval = 15;
+        let timerInterval = road / (road / 7);
         for(let i = 1; i < Math.floor(numOfCards) + 1;i++) {
             setCards(prev => ([
                 ...prev,
@@ -38,7 +36,7 @@ export default function WelcomePage() {
                     $card.css("top", `${-height}px`)
                   }
                 }, timerInterval);
-              }, ind * timerInterval * height);
+              }, ind * timerInterval * (height - spaceBetween));
             });
           }
         setTimeout(startAnimation, 300);
@@ -58,8 +56,8 @@ export default function WelcomePage() {
             <img src="./assets/welcome-1.png" alt="" />
             <img src="./assets/welcome-2.png" alt="" />
             <div className="gapped_container">
-                <h1 style={{ fontSize: "3rem" }}>Buy and Sell<br />Digital Arts</h1>
-                <p>The world’s largest online marketplace of online digital art </p>
+                <h1 className="top_hero">Buy and Sell<br />Digital Arts</h1>
+                <p>The world's largest online marketplace of online digital art </p>
                 <h3><a href="#">Explore</a></h3>
                 <StatisticList />
             </div>

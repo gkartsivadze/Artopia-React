@@ -67,6 +67,10 @@ nav {
   text-align: right;
 }
 
+.top_hero {
+  font-size: 3rem;
+}
+
 .btn {
   padding: 0.75rem 2.5rem;
   border: none;
@@ -115,9 +119,10 @@ nav {
 }
 
 #welcome_section {
+  padding-top: 4rem;
   min-height: 100vh;
   background: url(../public/assets/welcome-background.png) no-repeat, radial-gradient(10rem at 45% 95%, rgba(161, 89, 255, 0.4941176471), var(--black-1));
-  background-size: auto 100vh;
+  background-size: auto 100%;
   padding-inline: 160px;
   display: grid;
   place-items: center;
@@ -145,10 +150,12 @@ nav {
 .card_list {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .card {
-  height: 22rem;
+  height: 550px;
   border-radius: 1rem;
   overflow: hidden;
   transition: background-size 0.2s;
@@ -502,4 +509,59 @@ footer .option_list .list_header {
 }
 footer .option_list li {
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1500px) {
+  #welcome_section {
+    place-items: center;
+  }
+  #welcome_section img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  #welcome_section {
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+  #welcome_section .gapped_container {
+    grid-column: 2/3;
+  }
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 20px;
+  }
+  #welcome_section .gapped_container {
+    z-index: 1;
+    background-color: rgba(42, 42, 42, 0.4549019608);
+    padding: 1rem 2rem;
+  }
+  #welcome_section img {
+    position: absolute;
+    top: calc(50% + 2.5rem);
+    transform: translateY(-50%);
+  }
+  #welcome_section img:nth-of-type(1) {
+    left: 0;
+  }
+  #welcome_section img:nth-of-type(2) {
+    right: 0;
+  }
+}
+@media (max-width: 750px) {
+  #welcome_section {
+    padding-block: 5rem;
+  }
+  #welcome_section img {
+    width: 35vw;
+  }
+  #welcome_section .statistic_list {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=App.css.map */
