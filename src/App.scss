@@ -44,7 +44,6 @@ nav {
 
 body {
     background-color: var(--black-1);
-    padding-bottom: 2rem;
 }
 
 nav {
@@ -487,5 +486,55 @@ nav {
         padding-block: 0.3rem 0.5rem;
         aspect-ratio: 1;
         border-radius: 50%;
+    }
+}
+
+.custom_input {
+    display: flex;
+    align-items: center;
+    background-color: var(--black-1);
+    width: fit-content;
+    border-radius: 25rem;
+    padding: 0.5rem;
+    input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0.25rem 0.5rem;
+    }
+    .btn-purple {
+        border-radius: 50%;
+        padding-block: 0 0.35rem;
+        padding-inline:  0.6rem 0.5rem;
+    }
+}
+
+footer {
+    background: radial-gradient(20rem at 80% 5%,#a159ff7e, transparent);
+    padding-block: 5rem;
+    background-color: var(--neutral-dark);
+    margin-top: 3rem;
+    .footer_top {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .subscribe_section {
+        & > * {
+            margin-block: 0.5rem;
+        }
+    }
+    .footer_social > img {
+        margin-inline: 0.5rem;
+    }
+    .option_list {
+        .list_header {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        list-style: none;
+        color: grey;
     }
 }

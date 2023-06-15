@@ -43,7 +43,6 @@ nav {
 
 body {
   background-color: var(--black-1);
-  padding-bottom: 2rem;
 }
 
 nav {
@@ -452,4 +451,53 @@ nav {
   padding-block: 0.3rem 0.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
+}
+
+.custom_input {
+  display: flex;
+  align-items: center;
+  background-color: var(--black-1);
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 25rem;
+  padding: 0.5rem;
+}
+.custom_input input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+}
+.custom_input .btn-purple {
+  border-radius: 50%;
+  padding-block: 0 0.35rem;
+  padding-inline: 0.6rem 0.5rem;
+}
+
+footer {
+  background: radial-gradient(20rem at 80% 5%, rgba(161, 89, 255, 0.4941176471), transparent);
+  padding-block: 5rem;
+  background-color: var(--neutral-dark);
+  margin-top: 3rem;
+}
+footer .footer_top {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .subscribe_section > * {
+  margin-block: 0.5rem;
+}
+footer .footer_social > img {
+  margin-inline: 0.5rem;
+}
+footer .option_list {
+  list-style: none;
+  color: grey;
+}
+footer .option_list .list_header {
+  color: white;
+  margin-bottom: 1rem;
+}
+footer .option_list li {
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=App.css.map */
