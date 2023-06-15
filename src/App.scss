@@ -164,6 +164,7 @@ nav {
 
 .card {
     height: 550px;
+    aspect-ratio: 2 / 3;
     border-radius: 1rem;
     overflow: hidden;
     transition: background-size 0.2s;
@@ -293,7 +294,6 @@ nav {
 
         .card {
             position: absolute;
-            top: -22rem;
             &:nth-of-type(odd) {
                 right: 3rem;
             }

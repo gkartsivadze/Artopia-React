@@ -8,19 +8,17 @@ import data from "../../creator_data.json";
 import Carousel from "./Carousel";
 
 export default function WelcomePage() {
-    const [cards, setCards] = useState([1]);
+    const cards = [1];
     useEffect(() => {
+        console.log("running");
         let height = $(".card").height();
         let road = $(".animation_div").innerHeight() + height;
-        let numOfCards = road / height;
+        let numOfCards = Math.floor(road / height);
         (road / height) % 2 == 0 ? '' :  numOfCards -= 1;
-        let spaceBetween = (numOfCards % 1) * height / Math.round(numOfCards);
-        let timerInterval = road / (road / 7);
-        for(let i = 1; i < Math.floor(numOfCards) + 1;i++) {
-            setCards(prev => ([
-                ...prev,
-                i
-            ]))
+        let spaceBetween = ((road / height) % 1) * height / numOfCards;
+        let timerInterval = 1000 / 60;
+        for(let i = 1; i <= Math.floor(numOfCards) + 1;i++) {
+            cards.push(i);
         }
 
         function startAnimation() {
@@ -36,20 +34,10 @@ export default function WelcomePage() {
                     $card.css("top", `${-height}px`)
                   }
                 }, timerInterval);
-              }, ind * timerInterval * (height - spaceBetween));
+              }, ind * (height + spaceBetween) * (60 / height))
             });
           }
-        setTimeout(startAnimation, 300);
-            // const elem = $(".animation_div .card:nth-of-type(1)");
-            //     elem.css("top", parseInt(elem.css("top")) + 1 + "px");
-            //     if(parseInt(elem.css("top")) > spaceBetween) {
-            //         const elem2 =  $(".animation_div .card:nth-of-type(2)");
-            //         elem2.css("top", parseInt(elem2.css("top")) + 1 + "px");
-            //         if(parseInt(elem2.css("top")) > spaceBetween) {
-            //             const elem3 =  $(".animation_div .card:nth-of-type(3)");
-            //             elem3.css("top", parseInt(elem3.css("top")) + 1 + "px");
-            //         }
-            //     }
+        setTimeout(startAnimation, 1000);
     }, []);
     return <main>
         <section id="welcome_section">
