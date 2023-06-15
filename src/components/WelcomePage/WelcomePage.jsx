@@ -11,27 +11,45 @@ export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
         let height = $(".card").height();
-        let road = $(".animation_div").outerHeight() + 2 * height;
+        let road = $(".animation_div").outerHeight() + height;
         let numOfCards = road / height;
-        let spaceBetween = (numOfCards - Math.floor(numOfCards)) * height / Math.round(numOfCards);
+        (road / height) % 2 == 0 ? numOfCards -= 1 : '';
+        let spaceBetween = (numOfCards % 1) * height / Math.round(numOfCards);
+        let timerInterval = 15;
         for(let i = 1; i < Math.round(numOfCards);i++) {
             setCards(prev => ([
                 ...prev,
                 i
             ]))
         }
-        setInterval(() => {
-            const elem = $(".animation_div .card:nth-of-type(1)");
-                elem.css("top", parseInt(elem.css("top")) + 1 + "px");
-                if(parseInt(elem.css("top")) > spaceBetween) {
-                    const elem2 =  $(".animation_div .card:nth-of-type(2)");
-                    elem2.css("top", parseInt(elem2.css("top")) + 1 + "px");
-                    if(parseInt(elem2.css("top")) > spaceBetween) {
-                        const elem3 =  $(".animation_div .card:nth-of-type(3)");
-                        elem3.css("top", parseInt(elem3.css("top")) + 1 + "px");
-                    }
-                }
-            }, 1000 / 60)
+
+        function startAnimation() {
+            $(".animation_div .card").each((ind, elem) => {
+              setTimeout(() => {
+                const interval = setInterval(() => {
+                  const $card = $(elem);
+                  const currentTop = parseInt($card.css("top"));
+                  const newTop = currentTop + 1;
+                  $card.css("top", `${newTop}px`);
+          
+                  if (newTop > road) {
+                    $card.css("top", `${-height}px`)
+                  }
+                }, timerInterval);
+              }, ind * spaceBetween * timerInterval * 2 );
+            });
+          }
+        setTimeout(startAnimation, 300);
+            // const elem = $(".animation_div .card:nth-of-type(1)");
+            //     elem.css("top", parseInt(elem.css("top")) + 1 + "px");
+            //     if(parseInt(elem.css("top")) > spaceBetween) {
+            //         const elem2 =  $(".animation_div .card:nth-of-type(2)");
+            //         elem2.css("top", parseInt(elem2.css("top")) + 1 + "px");
+            //         if(parseInt(elem2.css("top")) > spaceBetween) {
+            //             const elem3 =  $(".animation_div .card:nth-of-type(3)");
+            //             elem3.css("top", parseInt(elem3.css("top")) + 1 + "px");
+            //         }
+            //     }
     }, []);
     return <main>
         <section id="welcome_section">
