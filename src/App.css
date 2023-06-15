@@ -148,6 +148,7 @@ nav {
 }
 
 .card {
+  height: 22rem;
   border-radius: 1rem;
   overflow: hidden;
   transition: background-size 0.2s;
@@ -272,6 +273,7 @@ nav {
 }
 #statistics_section .animation_div .card {
   position: absolute;
+  top: -22rem;
 }
 #statistics_section .animation_div .card:nth-of-type(odd) {
   right: 3rem;

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import StatisticList from "./StatisticList";
 import Card from "./Card";
 import SectionHeader from "../SectionHeader";
@@ -8,31 +8,41 @@ import data from "../../creator_data.json";
 import Carousel from "./Carousel";
 
 export default function WelcomePage() {
+    const [cards, setCards] = useState([1]);
     useEffect(() => {
-        var inter;
-        $(".animation_div .card").each((index,card) => {
-            $(card).css("top", index * 15 + "rem");
-                inter = setInterval(() => {
-                    $(card).css("top", parseInt($(card).css("top")) + 1 + "px")
-                    if(parseInt($(card).css("top")) > $("#statistics_section").height() + $(".card").outerHeight()) {
-                        $(card).css("top", 0 - $(".card").outerHeight() + "px");
+        let height = $(".card").height();
+        let road = $(".animation_div").outerHeight() + 2 * height;
+        let numOfCards = road / height;
+        let spaceBetween = (numOfCards - Math.floor(numOfCards)) * height / Math.round(numOfCards);
+        for(let i = 1; i < Math.round(numOfCards);i++) {
+            setCards(prev => ([
+                ...prev,
+                i
+            ]))
+        }
+        setInterval(() => {
+            const elem = $(".animation_div .card:nth-of-type(1)");
+                elem.css("top", parseInt(elem.css("top")) + 1 + "px");
+                if(parseInt(elem.css("top")) > spaceBetween) {
+                    const elem2 =  $(".animation_div .card:nth-of-type(2)");
+                    elem2.css("top", parseInt(elem2.css("top")) + 1 + "px");
+                    if(parseInt(elem2.css("top")) > spaceBetween) {
+                        const elem3 =  $(".animation_div .card:nth-of-type(3)");
+                        elem3.css("top", parseInt(elem3.css("top")) + 1 + "px");
                     }
-                }, 40)
-            });
-            return () => {
-                clearInterval(inter);
-            }
-    }, [])
+                }
+            }, 1000 / 60)
+    }, []);
     return <main>
         <section id="welcome_section">
-        <img src="./assets/welcome-1.png" alt="" />
-        <img src="./assets/welcome-2.png" alt="" />
-        <div className="gapped_container">
-            <h1 style={{fontSize: "3rem"}}>Buy and Sell<br />Digital Arts</h1>
-            <p>The world’s largest online marketplace of online digital art </p>
-            <h3><a href="#">Explore</a></h3>
-            <StatisticList />
-        </div>
+            <img src="./assets/welcome-1.png" alt="" />
+            <img src="./assets/welcome-2.png" alt="" />
+            <div className="gapped_container">
+                <h1 style={{ fontSize: "3rem" }}>Buy and Sell<br />Digital Arts</h1>
+                <p>The world’s largest online marketplace of online digital art </p>
+                <h3><a href="#">Explore</a></h3>
+                <StatisticList />
+            </div>
         </section>
         <section id="trending_section">
             <SectionHeader hero="Trending Sales" subHero="Checkout our weekly updated trending sales" />
@@ -51,20 +61,17 @@ export default function WelcomePage() {
             </div>
         </section>
         <section id="statistics_section">
-                <div className="info_div">
-                    <h1>We Have The Best Digital Artists</h1>
-                    <p className="text_color_an">The world's Largest Digital Marketplace for digital art and 3d assets</p>
-                    <StatisticList />
-                    <button className="btn btn-transparent">Create</button>
-                </div>
-                <div className="animation_div">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+            <div className="info_div">
+                <h1>We Have The Best Digital Artists</h1>
+                <p className="text_color_an">The world's Largest Digital Marketplace for digital art and 3d assets</p>
+                <StatisticList />
+                <button className="btn btn-transparent">Create</button>
+            </div>
+            <div className="animation_div">
+                {cards.map((elem,id) => {
+                    return <Card key={id} />
+                })}
+            </div>
         </section>
         <section id="categories_section">
             <SectionHeader hero="Categories" />
@@ -78,5 +85,5 @@ export default function WelcomePage() {
             <h1>Digital Art trending in All Categories</h1>
             <Carousel passData={data.slider} />
         </section>
-        </main> 
+    </main>
 }
