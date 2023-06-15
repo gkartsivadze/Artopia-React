@@ -6,7 +6,7 @@ export default function Statistic({num, category}) {
     return (
     <div style={styling} className="statistic_component">
         <h4>{num}</h4>
-        <p>{category}</p>
+        <p className="text_color_an">{category}</p>
     </div>
     )
 }

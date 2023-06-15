@@ -46,7 +46,7 @@ export default function WelcomePage() {
         <section id="statistics_section">
                 <div className="info_div">
                     <h1>We Have The Best Digital Artists</h1>
-                    <p>The world's Largest Digital Marketplace for digital art and 3d assets</p>
+                    <p className="text_color_an">The world's Largest Digital Marketplace for digital art and 3d assets</p>
                     <StatisticList />
                     <button className="btn btn-transparent">Create</button>
                 </div>
@@ -65,6 +65,36 @@ export default function WelcomePage() {
                 {data.categories.map(elem => {
                     return <Category key={elem.id} categoryImage={elem.image} categoryText={elem.name} categoryCover={elem.cover} />
                 })}
+            </div>
+        </section>
+        <section id="digital_section">
+            <h1>Digital Art trending in All Categories</h1>
+            <div id="digital_carousel">
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+                <div className="container">
+                    <Card />
+                </div>
+            </div>
+            <div id="carousel_navigator">
+                <button className="btn btn-transparent">Previous</button>
+                <button className="btn btn-transparent">Next</button>
             </div>
         </section>
         </main> 

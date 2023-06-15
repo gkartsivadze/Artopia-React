@@ -138,7 +138,8 @@ nav {
 #trending_section .hero {
   padding-top: 1rem;
 }
-#trending_section .hero, #trending_section .sub-hero {
+#trending_section .hero,
+#trending_section .sub-hero {
   padding-bottom: 2rem;
 }
 
@@ -257,6 +258,9 @@ nav {
   -webkit-background-clip: text;
   filter: brightness(2);
 }
+#statistics_section .info_div .text_color_an {
+  color: rgb(111, 111, 111);
+}
 #statistics_section .animation_div {
   position: relative;
   width: 30rem;
@@ -305,4 +309,72 @@ nav {
 #categories_section .grid_container .category_div .bottom {
   padding: 0.5rem 1.5rem;
   background-color: black;
+}
+
+#digital_section h1 {
+  margin-block: 3rem;
+}
+
+#digital_carousel {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+#digital_carousel .container {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  position: relative;
+  margin-bottom: 22rem;
+}
+#digital_carousel .container .card {
+  position: absolute;
+  box-shadow: 0 0 2rem 1rem var(--black-1);
+}
+#digital_carousel .container .card > div {
+  opacity: 0;
+}
+#digital_carousel .container:nth-of-type(1) {
+  z-index: 1;
+}
+#digital_carousel .container:nth-of-type(1) .card {
+  transform: rotateY(15deg) scale(0.7);
+}
+#digital_carousel .container:nth-of-type(2) {
+  z-index: 2;
+}
+#digital_carousel .container:nth-of-type(2) .card {
+  transform: rotateY(15deg) scale(0.8);
+}
+#digital_carousel .container:nth-of-type(3) {
+  z-index: 3;
+}
+#digital_carousel .container:nth-of-type(3) .card {
+  transform: rotateY(15deg) scale(0.9);
+}
+#digital_carousel .container:nth-of-type(4) {
+  z-index: 4;
+}
+#digital_carousel .container:nth-of-type(4) .card {
+  transform: scale(1);
+}
+#digital_carousel .container:nth-of-type(5) {
+  z-index: 3;
+}
+#digital_carousel .container:nth-of-type(5) .card {
+  transform: rotateY(-15deg) scale(0.9);
+}
+#digital_carousel .container:nth-of-type(6) {
+  z-index: 2;
+}
+#digital_carousel .container:nth-of-type(6) .card {
+  transform: rotateY(-15deg) scale(0.8);
+}
+#digital_carousel .container:nth-of-type(7) {
+  z-index: 1;
+}
+#digital_carousel .container:nth-of-type(7) .card {
+  transform: rotateY(-15deg) scale(0.7);
+}
+
+#carousel_navigator {
+  text-align: center;
 }/*# sourceMappingURL=App.css.map */
