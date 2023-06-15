@@ -92,7 +92,7 @@ nav {
 }
 
 .grey-text {
-  filter: opacity(0.7);
+  opacity: 0.7;
 }
 
 .bg-black {
@@ -149,23 +149,29 @@ nav {
 }
 
 .card {
-  padding-top: 15rem;
   border-radius: 1rem;
   overflow: hidden;
   transition: background-size 0.2s;
 }
-.card:hover {
-  background-size: calc(100% + 4rem) !important;
+.card .card_image {
+  transition: filter 0.2s;
+  max-width: 100%;
+}
+.card:hover .card_image {
+  filter: brightness(1.1);
 }
 .card .grid_container {
+  margin-top: -5rem;
   display: grid;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
-  grid-template-columns: repeat(3, max-content);
+  justify-content: space-evenly;
+  align-items: center;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
   padding: 0.75rem;
   padding-top: 0;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  grid-template-columns: repeat(3, max-content);
   font-size: 0.5rem;
   transition: -webkit-backdrop-filter 0.2s;
   transition: backdrop-filter 0.2s;
@@ -188,32 +194,6 @@ nav {
 .card .grid_container .card-name,
 .card .grid_container .card-price {
   grid-row: 3/4;
-}
-
-.carousel {
-  padding-top: 15rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-.carousel .grid_container {
-  display: grid;
-  padding-inline: 3rem;
-  gap: 1rem;
-  align-items: center;
-  grid-template-columns: auto auto;
-  padding-block: 0.5rem;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
-}
-.carousel .grid_container img {
-  grid-row: 1/3;
-  grid-column: 1/2;
-  width: 3rem;
-  height: 3rem;
-}
-.carousel .grid_container h5 {
-  width: -moz-max-content;
-  width: max-content;
 }
 
 #creators_section .grid_container {
@@ -314,7 +294,7 @@ nav {
   filter: none !important;
 }
 #categories_section .grid_container .category_div:hover .category_cover {
-  filter: opacity(0);
+  opacity: 0;
 }
 #categories_section .grid_container .category_div .top {
   position: relative;
@@ -325,7 +305,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  transition: filter 0.2s;
+  transition: opacity 0.2s;
 }
 #categories_section .grid_container .category_div .top .category_main {
   filter: blur(0.5rem);
@@ -336,33 +316,69 @@ nav {
   background-color: black;
 }
 
+#digital_section {
+  overflow-x: hidden;
+}
 #digital_section h1 {
   margin-block: 3rem;
 }
 
+.carousel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: -moz-min-content;
+  width: min-content;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 2rem 1rem var(--black-1);
+  transform-origin: bottom center;
+  transition: transform 1s, left 1s, right 1s;
+}
+.carousel:hover .grid_container {
+  filter: opacity(1);
+}
+.carousel .grid_container {
+  background-color: var(--black-1);
+  transition: 1s;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  display: grid;
+  padding-left: 1rem;
+  gap: 1rem;
+  align-items: center;
+  grid-template-columns: min-content max-content;
+  padding-block: 0.5rem;
+  filter: opacity(0);
+  transition: filter 1s, transform 1s;
+}
+.carousel .grid_container img {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  width: 2rem;
+  height: 2rem;
+}
+.carousel .grid_container h6 {
+  width: -moz-max-content;
+  width: max-content;
+}
+
 #digital_carousel {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-auto-flow: column;
 }
 #digital_carousel .container {
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
   position: relative;
-  margin-bottom: 22rem;
-}
-#digital_carousel .container .carousel {
-  position: absolute;
-  box-shadow: 0 0 2rem 1rem var(--black-1);
-}
-#digital_carousel .container .carousel > div {
-  filter: opacity(0);
-  transition: filter 1s;
-}
-#digital_carousel .container .carousel:hover > div {
-  filter: opacity(1) !important;
+  transform-style: preserve-3d;
+  transform: perspective(750px);
+  padding-bottom: 5rem;
 }
 #digital_carousel .container:nth-of-type(1) {
   z-index: 1;
+}
+#digital_carousel .container:nth-of-type(1):hover .carousel {
+  transform: translateX(-3rem) rotateY(0deg) scale(0.8);
 }
 #digital_carousel .container:nth-of-type(1) .carousel {
   transform: rotateY(15deg) scale(0.7);
@@ -370,40 +386,60 @@ nav {
 #digital_carousel .container:nth-of-type(2) {
   z-index: 2;
 }
+#digital_carousel .container:nth-of-type(2):hover .carousel {
+  transform: translateX(-3rem) rotateY(0deg) scale(0.8);
+}
 #digital_carousel .container:nth-of-type(2) .carousel {
   transform: rotateY(15deg) scale(0.8);
 }
 #digital_carousel .container:nth-of-type(3) {
   z-index: 3;
 }
+#digital_carousel .container:nth-of-type(3):hover .carousel {
+  transform: translateX(-3rem) rotateY(0deg) scale(0.8);
+}
 #digital_carousel .container:nth-of-type(3) .carousel {
   transform: rotateY(15deg) scale(0.9);
 }
 #digital_carousel .container:nth-of-type(4) {
   z-index: 4;
+  display: grid;
+  place-items: center;
 }
 #digital_carousel .container:nth-of-type(4) .carousel {
-  transform: scale(1);
+  position: relative;
 }
-#digital_carousel .container:nth-of-type(4) .carousel > div {
+#digital_carousel .container:nth-of-type(4) .carousel .grid_container {
   filter: opacity(1);
 }
 #digital_carousel .container:nth-of-type(5) {
   z-index: 3;
 }
+#digital_carousel .container:nth-of-type(5):hover .carousel {
+  transform: translateX(3rem) rotateY(0deg) scale(0.8);
+}
 #digital_carousel .container:nth-of-type(5) .carousel {
+  right: 0;
   transform: rotateY(-15deg) scale(0.9);
 }
 #digital_carousel .container:nth-of-type(6) {
   z-index: 2;
 }
+#digital_carousel .container:nth-of-type(6):hover .carousel {
+  transform: translateX(3rem) rotateY(0deg) scale(0.8);
+}
 #digital_carousel .container:nth-of-type(6) .carousel {
+  right: 0;
   transform: rotateY(-15deg) scale(0.8);
 }
 #digital_carousel .container:nth-of-type(7) {
   z-index: 1;
 }
+#digital_carousel .container:nth-of-type(7):hover .carousel {
+  transform: translateX(3rem) rotateY(0deg) scale(0.8);
+}
 #digital_carousel .container:nth-of-type(7) .carousel {
+  right: 0;
   transform: rotateY(-15deg) scale(0.7);
 }
 
@@ -412,7 +448,8 @@ nav {
 }
 #carousel_navigator button {
   margin-inline: 0.5rem;
-  padding: 0.5rem 0.8rem;
+  padding-inline: 0.7rem;
+  padding-block: 0.3rem 0.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
 }/*# sourceMappingURL=App.css.map */

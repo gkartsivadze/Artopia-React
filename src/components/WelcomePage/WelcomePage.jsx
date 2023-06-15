@@ -8,15 +8,21 @@ import data from "../../creator_data.json";
 import Carousel from "./Carousel";
 
 export default function WelcomePage() {
-    $(".animation_div .card").each((index,card) => {
-        $(card).css("top", index * 12 + "rem");
-            let inter = setInterval(() => {
-                $(card).css("top", parseInt($(card).css("top")) + 1 + "px")
-                if(parseInt($(card).css("top")) > $("#statistics_section").height() + $(".card").outerHeight()) {
-                    $(card).css("top", 0 - $(".card").outerHeight() + "px");
-                }
-            }, 40)
-        });
+    useEffect(() => {
+        var inter;
+        $(".animation_div .card").each((index,card) => {
+            $(card).css("top", index * 15 + "rem");
+                inter = setInterval(() => {
+                    $(card).css("top", parseInt($(card).css("top")) + 1 + "px")
+                    if(parseInt($(card).css("top")) > $("#statistics_section").height() + $(".card").outerHeight()) {
+                        $(card).css("top", 0 - $(".card").outerHeight() + "px");
+                    }
+                }, 40)
+            });
+            return () => {
+                clearInterval(inter);
+            }
+    }, [])
     return <main>
         <section id="welcome_section">
         <img src="./assets/welcome-1.png" alt="" />

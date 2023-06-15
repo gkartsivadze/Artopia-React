@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css'
 import WelcomePage from './components/WelcomePage/WelcomePage'
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
   const [moved, setMoved] = useState(false);
@@ -10,6 +11,7 @@ function App() {
     <>
     <Navigation moved={moved} />
       <WelcomePage />
+      <Footer />
     </>
   )
 }
