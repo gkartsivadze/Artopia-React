@@ -163,8 +163,7 @@ nav {
 }
 
 .card {
-    height: 550px;
-    aspect-ratio: 2 / 3;
+    position: relative;
     border-radius: 1rem;
     overflow: hidden;
     transition: background-size 0.2s;
@@ -176,15 +175,16 @@ nav {
         filter: brightness(1.1);
     }
     .grid_container {
-        margin-top: -5rem;
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
         display: grid;
         justify-content: space-evenly;
         align-items: center;
+        grid-template-columns: repeat(3, max-content);
         column-gap: 0.5rem;
         padding: 0.75rem;
         padding-top: 0;
         backdrop-filter: blur(0.5rem);
-        grid-template-columns: repeat(3, max-content);
         font-size: 0.5rem;
         transition: backdrop-filter 0.2s;
         h3 {
@@ -289,11 +289,27 @@ nav {
 
     .animation_div {
         position: relative;
-        width: 30rem;
+        width: 20rem;
         overflow: hidden;
-
         .card {
             position: absolute;
+            width: 150px;
+            border-radius: 0.25rem;
+            .grid_container {
+                font-size: 0.3rem;
+                padding: 0.2rem;
+                column-gap: 0;
+                .card-text:nth-of-type(1) {
+                    margin: 0;
+                }
+                h3 {
+                    padding-block: 0.2rem;
+                }
+                img {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                }
+            }
             &:nth-of-type(odd) {
                 right: 3rem;
             }

@@ -11,22 +11,22 @@ export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
         let interval;
-        let height = $(".card").height();
-        let road = $(".animation_div").height() + height;
+        let height = $(".animation_div .card").height() / 2;
+        let road = $(".animation_div").height() + (height * 2);
         let numOfCards = Math.floor(road / height);
-        let spaceBetween = ((road / height) % 1) * height / numOfCards;
+        numOfCards & 2 == 0 ? numOfCards -= 1 : "" ;
+        let spaceBetween = ((road / (height * 2)) % 1) * (height * 2) / numOfCards / 2;
         let timerInterval = 1000 / 60;
-        if (cards.length <= numOfCards + 1) {
+        if (cards.length <= numOfCards) {
             setCards(prev => ([
                 ...prev,
                 cards.length + 1
             ]));
         } else {
-            console.log("launched")
             startAnimation();
         }
         function startAnimation() {
-            $(".card").css("top", -height + "px")
+            $(".animation_div .card").css("top", -height * 2 + "px")
             $(".animation_div .card").each((ind, elem) => {
 
                 setTimeout(() => {
@@ -36,10 +36,10 @@ export default function WelcomePage() {
                         const newTop = currentTop + 1;
                         $card.css("top", `${newTop}px`);
                         if (newTop >= road) {
-                            $card.css("top", `${-height}px`)
+                            $card.css("top", `${-height * 2}px`)
                         }
                     }, timerInterval);
-                }, ind * (height + spaceBetween) / (60 / height))
+                }, ind * (height + spaceBetween) / 60 * 1000)
             });
         }
     }, [cards]);
