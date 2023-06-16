@@ -10,12 +10,13 @@ import Carousel from "./Carousel";
 export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
+        let height = $(".animation_div .card").height();
         let interval;
-        let height = $(".animation_div .card").height() / 2;
-        let road = $(".animation_div").height() + (height * 2);
+        let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
-        numOfCards & 2 == 0 ? numOfCards -= 1 : "" ;
-        let spaceBetween = ((road / (height * 2)) % 1) * (height * 2) / numOfCards / 2;
+        console.log(height);
+        numOfCards & 2 == 0 ? numOfCards-- : "" ;
+        let spaceBetween = ((road / height) % 1) * height / numOfCards / 2;
         let timerInterval = 1000 / 60;
         if (cards.length <= numOfCards) {
             setCards(prev => ([
@@ -23,26 +24,29 @@ export default function WelcomePage() {
                 cards.length + 1
             ]));
         } else {
-            // startAnimation();
+            startAnimation();
         }
         function startAnimation() {
-            $(".animation_div .card").css("top", -height * 2 + "px")
+            $(".animation_div .card").css("top", -height + "px")
             $(".animation_div .card").each((ind, elem) => {
 
                 setTimeout(() => {
                     interval = setInterval(() => {
-                        const $card = $(elem);
-                        const currentTop = parseInt($card.css("top"));
-                        const newTop = currentTop + 1;
-                        $card.css("top", `${newTop}px`);
-                        if (newTop >= road) {
-                            $card.css("top", `${-height * 2}px`)
+                        if(window.innerWidth <= 700) {
+                        } else {
+                            const $card = $(elem);
+                            const currentTop = parseInt($card.css("top"));
+                            const newTop = currentTop + 1;
+                            $card.css("top", `${newTop}px`);
+                            if (newTop >= road) {
+                                $card.css("top", `${-height}px`)
+                            }
                         }
                     }, timerInterval);
-                }, ind * (height + spaceBetween) / 60 * 1000)
+                }, ind * ((height + spaceBetween) / 60) * 1000)
             });
         }
-    }, [cards]);
+    }, [cards, window.innerWidth]);
     return <main>
         <section id="welcome_section">
             <img src="./assets/welcome-1.png" alt="" />
