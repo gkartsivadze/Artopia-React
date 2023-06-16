@@ -17,7 +17,7 @@ export default function WelcomePage() {
         numOfCards & 2 == 0 ? numOfCards-- : "" ;
         let spaceBetween = (road - (height * numOfCards)) / numOfCards;
         let timerInterval = 1000 / 30;
-        if (cards.length < numOfCards && window.innerWidth > 700) {
+        if (cards.length < numOfCards) {
             setCards(prev => ([
                 ...prev,
                 cards.length + 1
@@ -31,9 +31,6 @@ export default function WelcomePage() {
 
                 setTimeout(() => {
                     interval[ind] = setInterval(() => {
-                        if(window.innerWidth <= 700) {
-                            return
-                        }
                             const $card = $(elem);
                             const currentTop = parseInt($card.css("top"));
                             const newTop = currentTop + 1;

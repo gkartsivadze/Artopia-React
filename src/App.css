@@ -150,6 +150,14 @@ nav {
   opacity: 0;
 }
 
+.statistic_list {
+  justify-content: space-between;
+}
+.statistic_list > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .grey-text {
   opacity: 0.7;
 }
@@ -788,12 +796,15 @@ footer .option_list li {
     transform: scale(1.05);
     outline: 1px solid white;
   }
-  #statistics_section .animation_div .card {
-    left: 50% !important;
-    transform: translate(-50%);
-  }
   #digital_section {
     padding-inline: 0;
+  }
+  #statistics_section {
+    flex-direction: column;
+  }
+  #statistics_section .animation_div {
+    width: 100%;
+    height: 30rem;
   }
   footer .footer_top {
     grid-template-columns: 1fr 1fr;
@@ -809,18 +820,8 @@ footer .option_list li {
   #welcome_section img {
     width: 35vw;
   }
-  #welcome_section .statistic_list {
-    justify-content: space-between;
-  }
-  #welcome_section .statistic_list > div {
-    display: flex;
-    flex-direction: column;
-  }
 }
 @media (max-width: 700px) {
-  .animation_div {
-    display: none;
-  }
   #categories_section .grid_container {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
