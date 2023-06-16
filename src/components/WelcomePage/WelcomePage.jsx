@@ -11,13 +11,13 @@ export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
         let height = $(".animation_div .card").height();
-        let interval;
+        let interval = [];
         let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
         numOfCards & 2 == 0 ? numOfCards-- : "" ;
-        let spaceBetween = ((road / height) % 1) * height / numOfCards / 2;
-        let timerInterval = 1000 / 60;
-        if (cards.length <= numOfCards && window.innerWidth > 700) {
+        let spaceBetween = (road - (height * numOfCards)) / numOfCards;
+        let timerInterval = 1000 / 30;
+        if (cards.length < numOfCards && window.innerWidth > 700) {
             setCards(prev => ([
                 ...prev,
                 cards.length + 1
@@ -30,7 +30,7 @@ export default function WelcomePage() {
             $(".animation_div .card").each((ind, elem) => {
 
                 setTimeout(() => {
-                    interval = setInterval(() => {
+                    interval[ind] = setInterval(() => {
                         if(window.innerWidth <= 700) {
                             return
                         }
@@ -38,13 +38,14 @@ export default function WelcomePage() {
                             const currentTop = parseInt($card.css("top"));
                             const newTop = currentTop + 1;
                             $card.css("top", `${newTop}px`);
-                            if (newTop >= road) {
+                            if (newTop >= road - height) {
                                 $card.css("top", `${-height}px`)
                             }
                     }, timerInterval);
-                }, ind * ((height + spaceBetween) / 60) * 1000)
+                }, ind * ((height + spaceBetween) / 30) * 1000)
             });
         }
+        return () => interval.map(elem => clearInterval(elem));
     }, [cards, window.innerWidth]);
     return <main>
         <section id="welcome_section">
