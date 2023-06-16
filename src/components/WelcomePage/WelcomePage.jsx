@@ -23,7 +23,7 @@ export default function WelcomePage() {
                 cards.length + 1
             ]));
         } else {
-            startAnimation();
+            // startAnimation();
         }
         function startAnimation() {
             $(".animation_div .card").css("top", -height * 2 + "px")
@@ -79,7 +79,7 @@ export default function WelcomePage() {
             </div>
             <div className="animation_div">
                 {cards.map((elem, id) => {
-                    return <Card key={id} />
+                    return <Card key={id} name={id} />
                 })}
             </div>
         </section>
