@@ -572,6 +572,7 @@ nav {
         z-index: 4;
         display: flex;
         width: min-content;
+        height: 20rem;
         .carousel {
             position:sticky;
             .grid_container {
@@ -847,6 +848,9 @@ footer {
         }
     }
     .container {
+        &:nth-of-type(4) {
+            height: 15rem !important;
+        }
         img {
             width: 15rem;
         }
@@ -872,7 +876,7 @@ footer {
         a {
             display: block;
             width: 20rem;
-            padding: 1rem;
+            padding: 2rem;
             transition: transform 0.3s, outline 0.3s;
 
             &:hover {
@@ -948,6 +952,9 @@ footer {
         }
     }
     .container {
+        &:nth-of-type(4) {
+            height: 12rem !important;
+        }
         img {
             width: 12rem;
         }

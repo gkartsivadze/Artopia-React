@@ -514,6 +514,7 @@ nav {
   display: flex;
   width: -moz-min-content;
   width: min-content;
+  height: 20rem;
 }
 #digital_carousel .container:nth-of-type(4) .carousel {
   position: sticky;
@@ -748,6 +749,9 @@ footer .option_list li {
     grid-row: 3/4;
     grid-column: 1/2;
   }
+  .container:nth-of-type(4) {
+    height: 15rem !important;
+  }
   .container img {
     width: 15rem;
   }
@@ -772,7 +776,7 @@ footer .option_list li {
   .navigation-list a {
     display: block;
     width: 20rem;
-    padding: 1rem;
+    padding: 2rem;
     transition: transform 0.3s, outline 0.3s;
   }
   .navigation-list a:hover {
@@ -832,6 +836,9 @@ footer .option_list li {
   }
   #creators_section .creator_card img {
     max-width: 100%;
+  }
+  .container:nth-of-type(4) {
+    height: 12rem !important;
   }
   .container img {
     width: 12rem;
