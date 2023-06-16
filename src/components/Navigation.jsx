@@ -19,7 +19,7 @@ export default function Navigation() {
         menuState();
     }, [])
     return <nav style={{
-        backgroundImage: moved ? "linear-gradient(var(--black-1), transparent)" : "none",
+        backdropFilter: moved ? "blur(5px)" : "none",
         paddingTop: navigation ?  (moved ? "1rem" : "1.5rem") : (moved ? "1rem" : "2rem")
         }}>
             <svg width="131" height="38" viewBox="0 0 131 38" fill="none" xmlns="http://www.w3.org/2000/svg">

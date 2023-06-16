@@ -402,10 +402,10 @@ nav {
 
 #categories_section .grid_container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 9rem);
+  grid-template-columns: repeat(auto-fill, 11rem);
   gap: 2rem;
   place-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 #categories_section .grid_container .category_div {
   border-radius: 1rem;
@@ -681,6 +681,9 @@ footer .option_list li {
   }
   section {
     padding-inline: 1rem;
+  }
+  #categories_section .grid_container {
+    grid-template-columns: repeat(auto-fill, 13.5rem);
   }
   .card {
     width: 20rem;
