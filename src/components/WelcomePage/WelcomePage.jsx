@@ -14,9 +14,11 @@ export default function WelcomePage() {
         let interval = [];
         let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
-        numOfCards = numOfCards % 2 == 0 ? numOfCards - 1 : numOfCards ;
-        let spaceBetween = (road - (height * numOfCards)) / numOfCards;
-        let timerInterval = 1000 / 30;
+        console.log(height, road, road / height, numOfCards)
+        numOfCards = numOfCards % 2 == 0 ? numOfCards - 1 : numOfCards;
+        console.log(height, road, road / height, numOfCards)
+        let spaceBetween = (road - height * numOfCards) / (numOfCards * numOfCards);
+        let timerInterval = 1000 / 50;
         if (cards.length <= numOfCards) {
             setCards(prev => ([
                 ...prev,
@@ -39,7 +41,7 @@ export default function WelcomePage() {
                                 $card.css("top", `${-height}px`)
                             }
                     }, timerInterval);
-                }, ind * ((height + spaceBetween) / 30) * 1000)
+                }, ind * (height + spaceBetween) / 50 * 1000)
             });
         }
         return () => interval.map(elem => clearInterval(elem));
