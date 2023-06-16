@@ -8,37 +8,41 @@ import data from "../../creator_data.json";
 import Carousel from "./Carousel";
 
 export default function WelcomePage() {
-    const cards = [1];
+    const [cards, setCards] = useState([1]);
     useEffect(() => {
-        console.log("running");
+        let interval;
         let height = $(".card").height();
-        let road = $(".animation_div").innerHeight() + height;
+        let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
-        (road / height) % 2 == 0 ? '' :  numOfCards -= 1;
         let spaceBetween = ((road / height) % 1) * height / numOfCards;
         let timerInterval = 1000 / 60;
-        for(let i = 1; i <= Math.floor(numOfCards) + 1;i++) {
-            cards.push(i);
+        if (cards.length <= numOfCards + 1) {
+            setCards(prev => ([
+                ...prev,
+                cards.length + 1
+            ]));
+        } else {
+            console.log("launched")
+            startAnimation();
         }
-
         function startAnimation() {
+            $(".card").css("top", -height + "px")
             $(".animation_div .card").each((ind, elem) => {
-              setTimeout(() => {
-                const interval = setInterval(() => {
-                  const $card = $(elem);
-                  const currentTop = parseInt($card.css("top"));
-                  const newTop = currentTop + 1;
-                  $card.css("top", `${newTop}px`);
-          
-                  if (newTop >= road) {
-                    $card.css("top", `${-height}px`)
-                  }
-                }, timerInterval);
-              }, ind * (height + spaceBetween) * (60 / height))
+
+                setTimeout(() => {
+                    interval = setInterval(() => {
+                        const $card = $(elem);
+                        const currentTop = parseInt($card.css("top"));
+                        const newTop = currentTop + 1;
+                        $card.css("top", `${newTop}px`);
+                        if (newTop >= road) {
+                            $card.css("top", `${-height}px`)
+                        }
+                    }, timerInterval);
+                }, ind * (height + spaceBetween) / (60 / height))
             });
-          }
-        setTimeout(startAnimation, 1000);
-    }, []);
+        }
+    }, [cards]);
     return <main>
         <section id="welcome_section">
             <img src="./assets/welcome-1.png" alt="" />
@@ -74,7 +78,7 @@ export default function WelcomePage() {
                 <button className="btn btn-transparent">Create</button>
             </div>
             <div className="animation_div">
-                {cards.map((elem,id) => {
+                {cards.map((elem, id) => {
                     return <Card key={id} />
                 })}
             </div>

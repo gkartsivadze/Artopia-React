@@ -1,6 +1,8 @@
-import React from "react"
+import React, {useState} from "react"
 
-export default function Navigation({moved}) {
+export default function Navigation() {
+    const [moved, setMoved] = useState(false);
+    document.addEventListener("scroll", () => document.documentElement.scrollTop > 50 ? setMoved(true) : setMoved(false))
     return <nav style={{
         backgroundImage: moved ? "linear-gradient(var(--primary-color), transparent)" : "none",
         paddingTop: moved ? "1rem" : "2rem"
