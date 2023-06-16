@@ -109,6 +109,7 @@ nav {
   width: -moz-max-content;
   width: max-content;
   gap: var(--hamburger-line-gap);
+  cursor: pointer;
 }
 .hamburger-menu:before, .hamburger-menu:after,
 .hamburger-menu input {
@@ -693,7 +694,7 @@ footer .option_list li {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100dvh;
     gap: 0;
     transform: translate(100%);
     transition: transform 0.4s;
@@ -720,6 +721,19 @@ footer .option_list li {
     justify-content: space-between;
   }
 }
+@media (max-width: 600px) {
+  #creators_section .grid_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #creators_section .creator_card {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+  #creators_section .creator_card img {
+    max-width: 100%;
+  }
+}
 @media (max-width: 550px) {
   nav {
     padding-inline: 1rem;
@@ -728,5 +742,8 @@ footer .option_list li {
 @media (max-width: 450px) {
   html {
     font-size: 16px;
+  }
+  #creators_section .creator_card {
+    text-align: center;
   }
 }/*# sourceMappingURL=App.css.map */
