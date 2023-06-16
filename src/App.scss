@@ -294,7 +294,7 @@ nav {
         display: grid;
         place-items: center;
         justify-content: space-evenly;
-        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(auto-fill, 13rem);
         row-gap: 3rem;
     }
 
@@ -441,7 +441,7 @@ nav {
 #categories_section {
     .grid_container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(auto-fill, 9rem);
         gap: 2rem;
         place-items: center;
         justify-content: center;
@@ -759,7 +759,7 @@ footer {
     }
 
     .card {
-        width: 15rem;
+        width: 20rem;
 
         .grid_container {
             padding-inline: 0.1rem;
@@ -816,7 +816,7 @@ footer {
         }
 
         .grid_container {
-            grid-template-columns: repeat(auto-fill, 250px);
+            grid-template-columns: repeat(auto-fill, 12rem);
             gap: 1.5rem;
         }
     }
@@ -924,6 +924,11 @@ footer {
             }
         }
     }
+    
+    #statistics_section .animation_div .card {
+        width: 100px;
+        height: 150px;
+    }
 }
 
 @media (max-width:600px) {
@@ -968,5 +973,23 @@ footer {
 @media(max-width: 400px) {
     html {
         font-size: 12px;
+    }
+}
+
+@media (max-height: 700px) {
+    section {
+        padding-top: 5rem !important;
+    }
+}
+
+@media (min-width: 1800px) {
+    html {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 30px
     }
 }

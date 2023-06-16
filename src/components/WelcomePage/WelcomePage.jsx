@@ -14,7 +14,7 @@ export default function WelcomePage() {
         let interval = [];
         let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
-        numOfCards & 2 == 0 ? numOfCards-- : "" ;
+        numOfCards & 2 == 0 ? "" : numOfCards-- ;
         let spaceBetween = (road - (height * numOfCards)) / numOfCards;
         let timerInterval = 1000 / 30;
         if (cards.length < numOfCards) {
