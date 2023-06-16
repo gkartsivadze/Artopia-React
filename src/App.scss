@@ -123,6 +123,7 @@ nav {
     &:before,
     &:after,
     input {
+        cursor: pointer;
         content: '';
         display: block;
         width: var(--hamburger-line-width);
@@ -260,7 +261,7 @@ nav {
         padding: 0.75rem;
         padding-top: 0;
         backdrop-filter: blur(0.5rem);
-        font-size: 0.5rem;
+        font-size: 1rem;
         transition: backdrop-filter 0.2s;
 
         h3 {
@@ -312,8 +313,8 @@ nav {
 
 .creator_card {
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     background: linear-gradient(45deg, var(--black-gradient));
     font-size: 0.75rem;
 
@@ -746,10 +747,6 @@ footer {
     #welcome_section {
         padding-inline: 1rem;
         gap: 1rem;
-
-        .gapped_container {
-            grid-column: 2 / 3;
-        }
     }
 }
 
@@ -765,7 +762,7 @@ footer {
         width: 10rem;
 
         .grid_container {
-            padding-inline: 0.25rem;
+            padding-inline: 0.1rem;
             gap: 0;
 
             .card-text:nth-of-type(1) {
@@ -776,40 +773,20 @@ footer {
 }
 
 @media(max-width: 1000px) {
+    #welcome_section {
+        img {
+            max-width: none;
+            object-fit: cover;
+            width: 8rem;
+            height: 25rem;
+        }
+    }
     nav {
         padding-inline: 50px;
     }
 
     html {
         font-size: 20px;
-    }
-
-    #welcome_section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .gapped_container {
-            border-radius: 1rem;
-            ;
-            z-index: 1;
-            background-color: #2a2a2a74;
-            padding: 1rem 2rem;
-        }
-
-        img {
-            position: absolute;
-            top: calc(50% + 2.5rem);
-            transform: translateY(-50%);
-
-            &:nth-of-type(1) {
-                left: 0;
-            }
-
-            &:nth-of-type(2) {
-                right: 0;
-            }
-        }
     }
     
     #digital_carousel .container {
@@ -922,9 +899,15 @@ footer {
 @media(max-width: 750px) {
     #welcome_section {
         padding-block: 5rem;
-
+        padding-inline: 0.5rem;
+        .top_hero {
+            font-size: 2rem;
+        }
+        .gapped_container {
+            grid-column: 2 / 3;
+        }
         img {
-            width: 35vw;
+            width: 3rem;
         }
 
     }
@@ -973,11 +956,17 @@ footer {
     }
 }
 
-@media(max-width: 450px) {
+@media(max-width: 500px) {
     html {
         font-size: 16px;
     }
     #creators_section .creator_card {
         text-align: center;
+    }
+}
+
+@media(max-width: 400px) {
+    html {
+        font-size: 12px;
     }
 }
