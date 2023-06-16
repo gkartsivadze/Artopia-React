@@ -784,10 +784,11 @@ footer .option_list li {
   }
   #statistics_section {
     flex-direction: column;
+    height: auto;
   }
   #statistics_section .animation_div {
     width: 100%;
-    height: 30rem;
+    height: 35rem;
   }
   footer .footer_top {
     grid-template-columns: 1fr 1fr;
