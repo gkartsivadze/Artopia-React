@@ -478,7 +478,6 @@ nav {
 
 #digital_section {
     overflow-x: hidden;
-
     h1 {
         margin-block: 3rem;
     }
@@ -524,6 +523,7 @@ nav {
     grid-template-columns: repeat(2, 0.2fr) 0.5fr 1fr 0.5fr repeat(2,0.2fr);
     padding-bottom: 5rem;
     .container {
+        width: 100%;
         position: relative;
         transform-style: preserve-3d;
         transform: perspective(750px);

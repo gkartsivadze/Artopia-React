@@ -473,6 +473,7 @@ nav {
   padding-bottom: 5rem;
 }
 #digital_carousel .container {
+  width: 100%;
   position: relative;
   transform-style: preserve-3d;
   transform: perspective(750px);
