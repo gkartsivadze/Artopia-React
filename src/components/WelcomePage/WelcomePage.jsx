@@ -18,7 +18,7 @@ export default function WelcomePage() {
         numOfCards & 2 == 0 ? numOfCards-- : "" ;
         let spaceBetween = ((road / height) % 1) * height / numOfCards / 2;
         let timerInterval = 1000 / 60;
-        if (cards.length <= numOfCards) {
+        if (cards.length <= numOfCards && window.innerWidth > 700) {
             setCards(prev => ([
                 ...prev,
                 cards.length + 1
@@ -33,7 +33,8 @@ export default function WelcomePage() {
                 setTimeout(() => {
                     interval = setInterval(() => {
                         if(window.innerWidth <= 700) {
-                        } else {
+                            return
+                        }
                             const $card = $(elem);
                             const currentTop = parseInt($card.css("top"));
                             const newTop = currentTop + 1;
@@ -41,7 +42,6 @@ export default function WelcomePage() {
                             if (newTop >= road) {
                                 $card.css("top", `${-height}px`)
                             }
-                        }
                     }, timerInterval);
                 }, ind * ((height + spaceBetween) / 60) * 1000)
             });
