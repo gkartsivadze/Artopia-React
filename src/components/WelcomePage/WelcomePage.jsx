@@ -14,10 +14,8 @@ export default function WelcomePage() {
         let interval = [];
         let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
-        console.log(height, road, road / height, numOfCards)
-        numOfCards = numOfCards % 2 == 0 ? numOfCards - 1 : numOfCards;
-        console.log(height, road, road / height, numOfCards)
-        let spaceBetween = (road - height * numOfCards) / (numOfCards * numOfCards);
+        let spaceBetween = (road - height * numOfCards) / numOfCards;
+        console.log(height, road - height * numOfCards, numOfCards, spaceBetween)
         let timerInterval = 1000 / 50;
         if (cards.length <= numOfCards) {
             setCards(prev => ([
@@ -28,6 +26,7 @@ export default function WelcomePage() {
             startAnimation();
         }
         function startAnimation() {
+            console.log("launched")
             $(".animation_div .card").css("top", -height + "px")
             $(".animation_div .card").each((ind, elem) => {
 
@@ -45,7 +44,7 @@ export default function WelcomePage() {
             });
         }
         return () => interval.map(elem => clearInterval(elem));
-    }, [cards, window.innerWidth]);
+    }, [cards]);
     return <main>
         <section id="welcome_section">
             <img src="./assets/welcome-1.png" alt="" />

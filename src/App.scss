@@ -852,11 +852,11 @@ footer {
 
 @media (max-width: 800px) {
     nav {
-        padding-inline: 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .navigation-list {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px) !important;
         flex-direction: column;
         justify-content: center;
         position: absolute;
