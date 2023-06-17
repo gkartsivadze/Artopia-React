@@ -10,7 +10,7 @@ import Carousel from "./Carousel";
 export default function WelcomePage() {
     const [cards, setCards] = useState([1]);
     useEffect(() => {
-        let height = $(".animation_div .card").innerHeight();
+        let height = $(".animation_div .card").height();
         let interval = [];
         let road = $(".animation_div").innerHeight() + height;
         let numOfCards = Math.floor(road / height);
