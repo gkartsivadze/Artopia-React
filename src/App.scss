@@ -400,12 +400,13 @@ nav {
             position: absolute;
             height: 265px;
             width: 200px;
-            border-radius: 0.25rem;
+            border-radius: 0.75rem;
             cursor: pointer;
             transition: box-shadow 0.3s;
             .grid_container {
                 font-size: 0.3rem;
                 padding: 0.2rem;
+                padding-bottom: 0.5rem;
                 column-gap: 0;
 
                 .card-text:nth-of-type(1) {

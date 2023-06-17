@@ -370,13 +370,14 @@ nav {
   position: absolute;
   height: 265px;
   width: 200px;
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
   cursor: pointer;
   transition: box-shadow 0.3s;
 }
 #statistics_section .animation_div .card .grid_container {
   font-size: 0.3rem;
   padding: 0.2rem;
+  padding-bottom: 0.5rem;
   -moz-column-gap: 0;
        column-gap: 0;
 }
