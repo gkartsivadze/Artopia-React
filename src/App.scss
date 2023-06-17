@@ -959,6 +959,19 @@ footer {
     #statistics_section .animation_div .card {
         width: 160px;
         height: 200px;
+        .grid_container {
+            padding-block: 0.5rem;
+            h3 {
+                font-size: 0.75rem;
+                padding-bottom: 0.5rem;
+            }
+            p {
+                font-size: 0.5rem;
+            }
+            img {
+                width: 1.5rem; height: 1.5rem;
+            }
+        }
     }
 }
 
