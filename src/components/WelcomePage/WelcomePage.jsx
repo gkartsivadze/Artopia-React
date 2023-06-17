@@ -15,7 +15,6 @@ export default function WelcomePage() {
         let road = $(".animation_div").height() + height;
         let numOfCards = Math.floor(road / height);
         let spaceBetween = (road - height * numOfCards) / numOfCards;
-        console.log(height, road - height * numOfCards, numOfCards, spaceBetween)
         let timerInterval = 1000 / 50;
         if (cards.length <= numOfCards) {
             setCards(prev => ([
@@ -26,7 +25,6 @@ export default function WelcomePage() {
             startAnimation();
         }
         function startAnimation() {
-            console.log("launched")
             $(".animation_div .card").css("top", -height + "px")
             $(".animation_div .card").each((ind, elem) => {
 
