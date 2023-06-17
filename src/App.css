@@ -256,7 +256,7 @@ nav {
 .card .grid_container h3 {
   grid-column: 1/4;
   grid-row: 1/2;
-  padding-block: 1rem;
+  padding-block: 0.5rem;
 }
 .card .grid_container img {
   grid-row: 2/4;
@@ -265,7 +265,7 @@ nav {
   grid-row: 2/3;
 }
 .card .grid_container .card-text:nth-of-type(1) {
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 .card .grid_container .card-name,
 .card .grid_container .card-price {
