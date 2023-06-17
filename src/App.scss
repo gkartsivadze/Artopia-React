@@ -194,7 +194,7 @@ nav {
 
 #welcome_section {
     padding-top: 4rem;
-    min-height: min(100vh, 50rem);
+    min-height: min(100vh, 40rem);
     background: url(../public/assets/welcome-background.png) no-repeat,
         radial-gradient(10rem at 45% 95%, #a159ff7e, var(--black-1));
     background-size: auto 100%;
@@ -747,9 +747,6 @@ footer {
 }
 
 @media(max-width: 1150px) {
-    #welcome_section {
-        background-image: radial-gradient(10rem at 10% 95%, rgba(161, 89, 255, 0.4941176471), var(--black-1));
-    }
     section {
         padding-inline: 1rem;
     }
