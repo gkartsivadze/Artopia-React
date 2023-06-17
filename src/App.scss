@@ -194,7 +194,7 @@ nav {
 
 #welcome_section {
     padding-top: 4rem;
-    min-height: 100vh;
+    min-height: min(100vh, 50rem);
     background: url(../public/assets/welcome-background.png) no-repeat,
         radial-gradient(10rem at 45% 95%, #a159ff7e, var(--black-1));
     background-size: auto 100%;
