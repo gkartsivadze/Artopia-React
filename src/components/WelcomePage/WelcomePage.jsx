@@ -33,13 +33,13 @@ export default function WelcomePage() {
                     interval[ind] = setInterval(() => {
                             const $card = $(elem);
                             const currentTop = parseInt($card.css("top"));
-                            const newTop = currentTop + 1;
+                            const newTop = currentTop + 3;
                             $card.css("top", `${newTop}px`);
                             if (newTop >= road - height) {
                                 $card.css("top", `${-height}px`)
                             }
                     }, timerInterval);
-                }, ind * (height + spaceBetween) / 50 * 1000)
+                }, ind * (height + spaceBetween) / 150 * 1000)
             });
         }
         return () => interval.map(elem => clearInterval(elem));
@@ -79,9 +79,7 @@ export default function WelcomePage() {
                 <button className="btn btn-transparent">Create</button>
             </div>
             <div className="animation_div">
-                {cards.map((elem, id) => {
-                    return <Card key={id} name={id} />
-                })}
+                {cards.map((elem, id) => <Card key={elem} name={elem} />)}
             </div>
         </section>
         <section id="categories_section">
